@@ -171,14 +171,7 @@ $.__bodymovin.bm_renderManager = (function () {
     }
 
     function exportMotionBlur(exportData, comp) {
-        if (comp.motionBlur && shouldIncludeNotSupportedProperties()) {
-            exportData.mb = {
-              sa : comp.shutterAngle,
-              sp : comp.shutterPhase,
-              spf: comp.motionBlurSamplesPerFrame,
-              asl: comp.motionBlurAdaptiveSampleLimit
-            };
-        }
+        exportData.mb = comp.motionBlur;
     }
 
     function exportCompMarkers(exportData, comp) {
